@@ -1,0 +1,10 @@
+h1{
+    color: white;
+    text-align: center;
+}
+
+.navbar{
+    position: absolute;
+    margin: auto;
+    width: 100%;
+}
