@@ -1,7 +1,8 @@
 # DuoStatus
 
 This project was created to track the status of [DuoHacker](https://github.com/Logesh08/DuoStatus.git).
-<span>[![Netlify Status](https://api.netlify.com/api/v1/badges/77e7a640-e336-4cff-8923-f4cd521b77a1/deploy-status)](https://app.netlify.com/sites/duostatus/deploys)</span>
+<br/>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/77e7a640-e336-4cff-8923-f4cd521b77a1/deploy-status)](https://app.netlify.com/sites/duostatus/deploys)
 
 ## Available Scripts
 
