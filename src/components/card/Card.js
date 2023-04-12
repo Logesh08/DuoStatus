@@ -20,13 +20,40 @@ const CardContainer = () => {
   
         for (let key in data) {
           if (data.hasOwnProperty(key)) {
+            const span = document.getElementById(`changable-${key.slice(-1)}`);
+            if(span){
+              const originalColor = 'white';
+              const newValue = `+${data[key].xp} XP`;
+              if (span.innerHTML !== newValue) {
+                span.style.color = 'greenyellow';
+                span.style.fontWeight = 'bold';
+                setTimeout(() => {
+                  span.style.color = originalColor;
+                  span.style.fontWeight = "normal";
+                }, 2000);
+              }
+            }
+            
             newCards.push({
-              id: key,
+              id: key.slice(-1),
               title: key,
               content: `+${data[key].xp} XP`,
               failed: data[key].failed
             });
             total += data[key].xp;
+          }
+        }
+        const span = document.getElementById(`changable-0`);
+        if(span){
+          const originalColor = 'white';
+          const newValue = `+${total} XP`;
+          if (span.innerHTML !== newValue) {
+            span.style.color = 'greenyellow';
+            span.style.fontWeight = 'bold';
+            setTimeout(() => {
+              span.style.color = originalColor;
+              span.style.fontWeight = "normal";
+            }, 2000);
           }
         }
         newCards.unshift({
@@ -45,7 +72,7 @@ const CardContainer = () => {
             <div key={card.id} className="card">
                 <div className='insider'>
                     <h3>{card.title}</h3>
-                    <span>{card.content}</span>
+                    <span id={`changable-${card.id}`}>{card.content}</span>
                 </div>
             </div>
             ))}
@@ -54,5 +81,5 @@ const CardContainer = () => {
     );
   };
   
-  export default CardContainer;
+export default CardContainer;
   
